@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <header>Form Select</header>
+    <div class="itemSelect">
+        <input type="text" id="lableValue" placeholder="Lable">
+        <input type="text" id="placeHolderValue" placeholder="Placehoder">
+        <select name="select" id="fieldSelect">
+            <option value="blank">--select--</option>
+            <option value="textBox">Text Box</option>
+            <option value="date">Date</option>
+            <option value="password">Password</option>
+            <option value="radio">Radio Button</option>
+            <option value="checkbox">Check Box</option>
+        </select>
+        <button id="add" >Add</button>
+        <div id="container">
+
+        </div>
+    </div>
+    
+
+</body>
+</html>
+<script>
+    const addButton = document.getElementById("add");
+    
+
+    addButton.addEventListener("click",addElemntToDom);
+
+    function addElemntToDom(){
+        const containerElement = document.getElementById("container");
+
+        const lbl = document.getElementById("lableValue").value ;
+        const plh = document.getElementById("placeHolderValue").value ;
+        let sel = document.getElementById("fieldSelect").value ;
+
+        if(sel === "textBox"){
+            const parentDivElem = document.createElement("div");
+
+            const elemLbl = document.createElement("label");
+            elemLbl.append(lbl);
+
+            const elem = document.createElement("input");
+            elem.setAttribute("type", "text");
+            elem.setAttribute("placeholder",plh);
+
+            parentDivElem.appendChild(elemLbl);
+            parentDivElem.appendChild(elem);
+            containerElement.appendChild(parentDivElem);
+
+            document.getElementById("lableValue").value = "";
+            document.getElementById("placeHolderValue").value = "" ;
+            document.getElementById("fieldSelect").value = "blank" ;
+            return;
+        }
+        if(sel === "date"){
+            const parentDivElem = document.createElement("div");
+
+            const elemLbl = document.createElement("label");
+            elemLbl.append(lbl);
+
+            const elem = document.createElement("input");
+            elem.setAttribute("type", "date");
+            // elem.setAttribute("placeholder",plh);
+
+            parentDivElem.appendChild(elemLbl);
+            parentDivElem.appendChild(elem);
+            containerElement.appendChild(parentDivElem);
+
+            document.getElementById("lableValue").value = "";
+            document.getElementById("placeHolderValue").value = "" ;
+            document.getElementById("fieldSelect").value = "blank" ;
+            return;
+        }
+        if(sel === "password"){
+            const parentDivElem = document.createElement("div");
+
+            const elemLbl = document.createElement("label");
+            elemLbl.append(lbl);
+
+            const elem = document.createElement("input");
+            elem.setAttribute("type", "password");
+            // elem.setAttribute("placeholder",plh);
+
+            parentDivElem.appendChild(elemLbl);
+            parentDivElem.appendChild(elem);
+            containerElement.appendChild(parentDivElem);
+
+            document.getElementById("lableValue").value = "";
+            document.getElementById("placeHolderValue").value = "" ;
+            document.getElementById("fieldSelect").value = "blank" ;
+            return;
+        }
+        if(sel === "radio"){
+            const parentDivElem = document.createElement("div");
+
+            const elemLbl = document.createElement("label");
+            elemLbl.append(lbl);
+
+            const elem = document.createElement("input");
+            elem.setAttribute("type", "radio");
+            elem.append(plh);
+            // elem.setAttribute("placeholder",plh);
+
+            parentDivElem.appendChild(elemLbl);
+            parentDivElem.appendChild(elem);
+            containerElement.appendChild(parentDivElem);
+
+            document.getElementById("lableValue").value = "";
+            document.getElementById("placeHolderValue").value = "" ;
+            document.getElementById("fieldSelect").value = "blank" ;
+            return;
+        }
+        if(sel === "checkbox"){
+            const parentDivElem = document.createElement("div");
+
+            const elemLbl = document.createElement("label");
+            elemLbl.append(lbl);
+
+            const elem = document.createElement("input");
+            elem.setAttribute("type", "checkbox");
+            elem.append(plh);
+            // elem.setAttribute("placeholder",plh);
+
+            parentDivElem.appendChild(elemLbl);
+            parentDivElem.appendChild(elem);
+            containerElement.appendChild(parentDivElem);
+
+            document.getElementById("lableValue").value = "";
+            document.getElementById("placeHolderValue").value = "" ;
+            document.getElementById("fieldSelect").value = "blank" ;
+            return;
+        }
+    }
+</script>
